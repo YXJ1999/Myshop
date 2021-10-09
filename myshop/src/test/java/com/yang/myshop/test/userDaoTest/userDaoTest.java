@@ -6,11 +6,14 @@ import com.yang.myshop.pojo.User;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class userDaoTest extends BaseTest {
     @Autowired
     public UserDao userDao;
+//    private static final org.slf4j.Logger log = org.slf4j.LoggerFactory.getLogger(userDaoTest.class);
     @Test
     @Ignore
     public void insertUser(){
@@ -23,6 +26,6 @@ public class userDaoTest extends BaseTest {
     @Test
     public void getUserByID(){
         User user=userDao.getUserById(1);
-        user.toString();
+        System.out.println(user.getLoginID()+user.getUserName()+user.getPassword());
     }
 }
