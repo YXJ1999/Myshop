@@ -9,4 +9,7 @@
     <select id="getUserById" resultType="com.yang.myshop.pojo.User">
         select user_id,user_name,login_id,password from shop.user where user_id =#{userId};
     </select>
+    <select id="getUserByPassword" resultType="com.yang.myshop.pojo.User">
+        select user_id,user_name,login_id,password from shop.user where login_id=#{loginId} and password =#{password};
+    </select>
 </mapper>

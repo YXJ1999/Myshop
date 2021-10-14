@@ -6,8 +6,6 @@ import com.yang.myshop.pojo.User;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class userDaoTest extends BaseTest {
@@ -23,9 +21,15 @@ public class userDaoTest extends BaseTest {
         user.setPassword("1qazcde3");
         Assert.assertEquals( userDao.insertUser(user),1);
     }
+    @Ignore
     @Test
     public void getUserByID(){
         User user=userDao.getUserById(1);
+        System.out.println(user.getLoginID()+user.getUserName()+user.getPassword());
+    }
+    @Test
+    public void getUserByPasswordTest(){
+        User user=userDao.getUserByPassword("zzz0120302","1qazcde3");
         System.out.println(user.getLoginID()+user.getUserName()+user.getPassword());
     }
 }

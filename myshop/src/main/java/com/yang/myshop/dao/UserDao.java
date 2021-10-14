@@ -9,7 +9,9 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface UserDao {
     //添加用户
-    public int insertUser (User user);
+    int insertUser (User user);
     //通过用户的ID来搜索用户信息
-    public User getUserById(int id);
+    User getUserById(int id);
+    //用户通过账号密码登录
+    User getUserByPassword(String loginId,String password);
 }
